@@ -4,12 +4,19 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
+// 登陆页面
+const Login = ()=> import('@/components/login')
+
+
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '*',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      component: Login
     }
   ]
 })
